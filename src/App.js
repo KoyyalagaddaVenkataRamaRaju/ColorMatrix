@@ -5,7 +5,6 @@ const App = () => {
   const [matrix, setMatrix] = useState(Array(3).fill(Array(3).fill('')));
   const [clicks, setClicks] = useState([]);
   const [isLastBoxClicked, setIsLastBoxClicked] = useState(false);
-
   const handleBoxClick = (rowIdx, colIdx) => {
     if (isLastBoxClicked) return;
     const newMatrix = matrix.map((row, rIdx) =>
@@ -22,7 +21,6 @@ const App = () => {
       changeColorsSequentially(newClicks);
     }
   };
-
   const changeColorsSequentially = async (clicksArray) => {
     for (let i = 0; i < clicksArray.length; i++) {
       await new Promise(resolve => setTimeout(resolve, 500));
